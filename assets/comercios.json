@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nome": "Barraca de Lanches",
+    "preco": 1000,
+    "lucro": 100,
+    "tempo": 21600000
+  },
+  {
+    "id": 2,
+    "nome": "Mercadinho",
+    "preco": 5000,
+    "lucro": 350,
+    "tempo": 21600000
+  },
+  {
+    "id": 3,
+    "nome": "Loja de Roupas",
+    "preco": 15000,
+    "lucro": 1000,
+    "tempo": 21600000
+  },
+  {
+    "id": 4,
+    "nome": "Restaurante",
+    "preco": 50000,
+    "lucro": 3000,
+    "tempo": 21600000
+  },
+  {
+    "id": 5,
+    "nome": "Shopping",
+    "preco": 250000,
+    "lucro": 15000,
+    "tempo": 21600000
+  }
+]

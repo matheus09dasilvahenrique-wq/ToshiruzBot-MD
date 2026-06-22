@@ -1,0 +1,50 @@
+{
+  "5513996229058@s.whatsapp.net": {
+    "comercios": [
+      {
+        "id": 1,
+        "nome": "Barraca de Lanches",
+        "preco": 1000,
+        "lucro": 100,
+        "tempo": 21600000,
+        "ultimoResgate": 1781971497319
+      }
+    ]
+  },
+  "558389193930@s.whatsapp.net": {
+    "comercios": [
+      {
+        "id": 1,
+        "nome": "Barraca de Lanches",
+        "preco": 1000,
+        "lucro": 100,
+        "tempo": 21600000,
+        "ultimoResgate": 1781969909703
+      }
+    ]
+  },
+  "558398813346@s.whatsapp.net": {
+    "comercios": [
+      {
+        "id": 1,
+        "nome": "Barraca de Lanches",
+        "preco": 1000,
+        "lucro": 100,
+        "tempo": 21600000,
+        "ultimoResgate": 1781971505268
+      }
+    ]
+  },
+  "553499479229@s.whatsapp.net": {
+    "comercios": [
+      {
+        "id": 1,
+        "nome": "Barraca de Lanches",
+        "preco": 1000,
+        "lucro": 100,
+        "tempo": 21600000,
+        "ultimoResgate": 1781704146901
+      }
+    ]
+  }
+}

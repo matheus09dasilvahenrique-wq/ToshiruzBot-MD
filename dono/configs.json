@@ -1,0 +1,18 @@
+{
+  "prefix": "!",
+  "NomeDoBot": "Toshiruz Bot",
+  "NickDono": "Dono",
+  "numerodono": "",
+  "numerosub": "",
+  "key": "",
+  "apitoken": "",
+  "chavepix": "",
+  "versao": "1.2.0",
+  "version": "1.2.0",
+  "channel": {
+    "ativo": false,
+    "jid": "",
+    "nome": "Toshiruz-Bot",
+    "url": ""
+  }
+}

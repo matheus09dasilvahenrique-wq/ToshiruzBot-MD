@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nome": "Picareta",
+    "emoji": "⛏️",
+    "preco": 100
+  },
+  {
+    "id": 2,
+    "nome": "Vara de Pesca",
+    "emoji": "🎣",
+    "preco": 15
+  },
+  {
+    "id": 3,
+    "nome": "Enxada",
+    "emoji": "🌱",
+    "preco": 25
+  },
+  {
+    "id": 4,
+    "nome": "Machado",
+    "emoji": "🪵",
+    "preco": 50
+  },
+  {
+    "id": 5,
+    "nome": "Faca",
+    "emoji": "🔪",
+    "preco": 50
+  }
+]

@@ -1,0 +1,19 @@
+TOSHIRUZ BOT - PACOTE CRIPTOGRAFADO PARA VENDA
+
+1. Edite dono/configs.json antes de iniciar:
+   - numerodono: número do dono com DDI. Ex: 5583999999999
+   - key: key liberada pelo painel/API
+   - apitoken: token da API usada nos comandos
+   - chavepix: sua chave Pix
+
+2. Instale as dependências:
+   npm install
+
+3. Inicie:
+   npm start
+
+Observações:
+- Este pacote não inclui node_modules.
+- Este pacote não inclui sessões/QR antigos.
+- O index.js, keycheck.js, menus e funções JS foram empacotados em loader criptografado.
+- O cliente precisa inserir a key no configs.json.

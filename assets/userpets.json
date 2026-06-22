@@ -1,0 +1,130 @@
+{
+  "558391762245@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      },
+      {
+        "id": 20,
+        "nome": "Pantera",
+        "raridade": "raro",
+        "valor": 400
+      }
+    ]
+  },
+  "5522998536014@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      },
+      {
+        "id": 33,
+        "nome": "Fênix Jovem",
+        "raridade": "lendario",
+        "valor": 3500
+      }
+    ]
+  },
+  "553499479229@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      },
+      {
+        "id": 2,
+        "nome": "Gatinho",
+        "raridade": "comum",
+        "valor": 10
+      },
+      {
+        "id": 16,
+        "nome": "Falcão",
+        "raridade": "raro",
+        "valor": 200
+      },
+      {
+        "id": 20,
+        "nome": "Pantera",
+        "raridade": "raro",
+        "valor": 400
+      },
+      {
+        "id": 31,
+        "nome": "Dragão Bebê",
+        "raridade": "lendario",
+        "valor": 2500
+      }
+    ]
+  },
+  "5513996229058@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 23,
+        "nome": "Tigre Branco",
+        "raridade": "epico",
+        "valor": 700
+      }
+    ]
+  },
+  "5511915282624@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      },
+      {
+        "id": 2,
+        "nome": "Gatinho",
+        "raridade": "comum",
+        "valor": 10
+      }
+    ]
+  },
+  "558389193930@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      }
+    ]
+  },
+  "558398813346@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 1,
+        "nome": "Doguinho",
+        "raridade": "comum",
+        "valor": 5
+      },
+      {
+        "id": 3,
+        "nome": "Coelho",
+        "raridade": "comum",
+        "valor": 15
+      }
+    ]
+  },
+  "558391980695@s.whatsapp.net": {
+    "pets": [
+      {
+        "id": 17,
+        "nome": "Javali",
+        "raridade": "raro",
+        "valor": 250
+      }
+    ]
+  }
+}
