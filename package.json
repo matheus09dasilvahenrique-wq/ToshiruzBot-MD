@@ -9,7 +9,7 @@
     "test": "node index.js"
   },
   "keywords": [],
-  "author": "Biel",
+  "author": "Math",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^5.0.0",
@@ -36,11 +36,10 @@
     "yt-search": "^2.13.1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bielfreitass/ToshiruzBot-V1.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bielfreitass/ToshiruzBot-V1/issues"
-  },
-  "homepage": "https://github.com/bielfreitass/ToshiruzBot-V1#readme"
-}
+  "type": "git",
+  "url": "git+https://github.com/matheus09dasilvahenrique-wq/ToshiruzBot-MD.git"
+},
+"bugs": {
+  "url": "https://github.com/matheus09dasilvahenrique-wq/ToshiruzBot-MD/issues"
+},
+"homepage": "https://github.com/matheus09dasilvahenrique-wq/ToshiruzBot-MD#readme"
