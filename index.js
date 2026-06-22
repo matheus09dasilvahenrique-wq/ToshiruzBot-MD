@@ -1,4 +1,4 @@
-// OTIMIZADO: cache de JSON/metadata, leitura imediata de mensagens e remoção de delays artificiais.
+
 // ================================= \\
 // ESSE bot está sendo continuado pelo Matheus & Daniel! Ainda está em fases de testes para a fase da V2 e depois ser disponibilizada, não VAZE por enquanto!
 // ================================= \\
