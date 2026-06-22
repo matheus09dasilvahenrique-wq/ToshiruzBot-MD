@@ -1,14 +1,109 @@
-// Toshiruz Bot - arquivo protegido
-const crypto = require('crypto');
-const zlib = require('zlib');
-(function(){
-  const payload = Buffer.from(`i6IaqZ+2MYmwEwbrJjKAmEkbGd0V5nGtgjK3tkoH/+StgDr5RuDXiLoc+mzTqCPGVa92CGy+wgDY7z8rC2qlsuqAIg9eq0RCk+jrE3YMZKvx+BVuHvIDh+jWGpPpxCtHDHDxcmGxhivhmCPMeN7DXKry2dIXMf3nQW/H4uW9AC2/sc755yy/fbMRorz1Xi76XzGGibNYV4EyswO4z83Cn9UKMu6GjkHgEhkG9iZCUiP2WkWQyQmf6E623TCQuMKpAJCqOHtbV1BeYqfypz1FcD0Prfjl2mj+/K0xYkqSi7v8/Jlgj8WPuw8Fp5E4S/tjf5UW7xsZKs8HsGHjHN3JM2C4rAW5SaKFietgYv7K+0ecxOlOkGVsRU2c8+GiZY3zGhqYT4UDCvPj7vzlbwPFdpM5MUj46pD/nu4WSLKytyc6xfUe05SIhAZVJY++/sV1Jqw9IFyn1KzlCFAwtrX2fY+T2Isg+Webgu1oBgb+n3C6lCh+2qsuGUolJQKRK7j5ai0tfsP+jur4H+VOLZ6CjPMnMchXueOq4ied1ozFCl6qUo26knArQ81Wi4E8O4seDGeAhxdjEATZ5GVhLosU4JdGopS6Nu15wIIctfDO+farcj3zyT03XnFnnzgUh3j18U9DMw4lLCS7+cxVJjpEAEQElbd5Ix+QhViX0ugg+ALTpsUrAbBHhokz+UEFueqvEqNO8pj8ftSNVsKgfPc5cll4bbCSWPpMkSYZrMWFCObRgLMofPoJ8cWwRP1EqSnzKOTdQWWTmt1B3z4aQ+QzGeCLYPHEasRna72zsC8ftd4aZWEohMWlPfsGG8DWO9TM2INlr2pPr9SvilacJZX4gVvWJKF/40BrPI3uthKbNtOpjcmUpm0/L0bmNcWFNKsISclNeiyhN9yGI9FudEzIhoLE2H90kVGBfXeanugIqVCDGAGHt1bej2w4JUJZY0B/wV+lqdMnSROoU0rE7GrVc6lUSFt8PMKm+YHKx2HMWmuKpeBEK06PINYnkMaJDGrWy4oqVzJl5uziF0M3YNLebs9sezU8juwyGg45rSeVyaR95DurpZ1OZZ2A5QTLqZqYdNJPzahtWCJ+Z0kPn+2Pkp6fqyX+UYqPDOFnHf9uoBc8DFEKXgIfCClmEHvy2hBQFVcxvu8pw3Frn32zsxH+Mvnr1tvmc4JMPR7Y8Gax/P2ZGRRy8sxTmTF8uHlM1qJu5ksbtgoVxXNgBvnhyfInhQsax+dbrpLbSWxHHwuJcM+RysOPt5hnIPvZ8RPYXxFIrrDtHX4vRQSqtcFDRpRNq9/i65dQg3q+f1kWb066sGUOB502GeqHEC9OthbMIkbog0o/K+wNwYMLYPwD05ikcfZurNZMMgkOuoL6fonw0xBebRwa6jxoiP6Hcn+9P59SJnybDr2e14B1mkNcTMPV5DD1yU4+jr3FQQUwBSw1Wd52eEntmeVlHPO6HYvgNbQRmnYx/rHV+KjxI6NB1N6dosnUmuY5ZlvYwpTfvslGDL1Rx6A4o9iU+40slAFfDhSBMLddpYZ4v6zd3J/yJ2aHTFYG7jYCwrF9LYZdRDnz0CADyVEdCN38o+gnkdrEuGItMIFoeLMSByyeZgR5MdLoBFYzOF/XvrrYJWMbtUTEuT2Z0Om2zf6vEM8WvCQ+Por6cLllLmQDHdN9cYauZ7i9PrLvgESmRT75hFwaNvYA9Dwco0bg+Khqqzc5lkGjQ++UncmOVZYqciTFCIle+L6kxcGrj0b28B7mErvWOwmrcvMA+ysaTxG1KFExarrRoSMS`, 'base64');
-  const iv = payload.subarray(0, 16);
-  const data = payload.subarray(16);
-  const key = crypto.createHash('sha256').update(`TOSHIRUZ-BOT-VENDA-KEY-2026:assets/functions/attp.js`).digest();
-  const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
-  const decrypted = Buffer.concat([decipher.update(data), decipher.final()]);
-  const code = zlib.gunzipSync(decrypted).toString('utf8');
-  const fn = new Function('require', 'module', 'exports', '__filename', '__dirname', code);
-  return fn(require, module, exports, __filename, __dirname);
-})();
+const { exec } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+
+// Função para quebrar o texto automaticamente a cada 7 caracteres
+function quebrarLinhas(texto, limite = 7) {
+    const palavras = texto.split(" ");
+    let linhas = [];
+    let linhaAtual = "";
+
+    for (let palavra of palavras) {
+        // Se a palavra sozinha já ultrapassa o limite, quebra no meio
+        if (palavra.length > limite) {
+            if (linhaAtual) {
+                linhas.push(linhaAtual.trim());
+                linhaAtual = "";
+            }
+
+            while (palavra.length > limite) {
+                linhas.push(palavra.slice(0, limite));
+                palavra = palavra.slice(limite);
+            }
+
+            if (palavra.length > 0) {
+                linhaAtual = palavra + " ";
+            }
+
+            continue;
+        }
+
+        if ((linhaAtual + palavra).length > limite) {
+            linhas.push(linhaAtual.trim());
+            linhaAtual = palavra + " ";
+        } else {
+            linhaAtual += palavra + " ";
+        }
+    }
+
+    if (linhaAtual.trim().length > 0) linhas.push(linhaAtual.trim());
+
+    return linhas.join("\n");
+}
+
+async function gerarAttp(texto, outputWebp) {
+    return new Promise((resolve, reject) => {
+        const pasta = "./media/attp_frames";
+
+        // Remove a pasta inteira e recria zerada
+        try {
+            if (fs.existsSync(pasta)) fs.rmSync(pasta, { recursive: true, force: true });
+            fs.mkdirSync(pasta, { recursive: true });
+        } catch (e) {
+            console.log("Erro ao limpar pasta:", e);
+        }
+
+        // ID único por execução
+        const ID = Date.now();
+
+        let cmds = [];
+
+        // Aplicar quebra automática de linha
+        const textoFormatado = quebrarLinhas(texto, 7);
+
+        // Gerar 20 frames
+        for (let i = 0; i < 20; i++) {
+            const hue = Math.floor((i * 360) / 20);
+
+            cmds.push(
+                `convert -size 512x512 xc:transparent -gravity center ` +
+                `-pointsize 90 -fill "hsl(${hue},100%,50%)" ` +
+                `-annotate 0 "${textoFormatado.replace(/"/g, '\\"')}" ` +
+                `${pasta}/frame_${ID}_${i}.png`
+            );
+        }
+
+        // Executa o convert de todos os frames
+        exec(cmds.join(" && "), (err) => {
+            if (err) return reject("Erro ao gerar frames: " + err);
+
+            const gifPath = "./media/attp.gif";
+            const webpPath = outputWebp;
+
+            // Gerar GIF com estabilidade máxima
+            const gifCmd = `convert -delay 4 -loop 0 ${pasta}/frame_${ID}_*.png ${gifPath}`;
+
+            exec(gifCmd, (err) => {
+                if (err) return reject("Erro ao gerar GIF: " + err);
+
+                // Verificar se o GIF existe e tem tamanho válido
+                if (!fs.existsSync(gifPath)) return reject("GIF não foi gerado.");
+                if (fs.statSync(gifPath).size < 20) return reject("GIF gerado está vazio.");
+
+                // Converter GIF para WEBP
+                const webpCmd =
+                    `ffmpeg -y -i ${gifPath} -vcodec libwebp -filter:v fps=fps=15 ` +
+                    `-lossless 0 -compression_level 6 -q:v 50 ` +
+                    `-loop 0 -preset default -an -fps_mode passthrough ${webpPath}`;
+
+                exec(webpCmd, (err) => {
+                    if (err) return reject("Erro ao gerar WEBP: " + err);
+
+                    resolve(webpPath);
+                });
+            });
+        });
+    });
+}
+
+module.exports = { gerarAttp };
