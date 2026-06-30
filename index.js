@@ -161,10 +161,14 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function atualizarBot() {
     const configPath = path.join(__dirname, "./dono/configs.json");
-    const config = JSON.parse(fs.readFileSync(configPath));
 
+    // Lê a configuração local
+    const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+
+    // Obtém o version.json do GitHub
     const { data: remote } = await axios.get(UPDATE_URL);
 
+    // Verifica se há atualização
     if (config.version === remote.version && !remote.forceUpdate) {
         return {
             atualizado: false,
@@ -172,19 +176,43 @@ async function atualizarBot() {
 `✅ O bot já está atualizado!
 
 📦 Versão: ${config.version}
-📝 ${remote.message}`
+📝 ${remote.message || "Nenhuma informação."}`
         };
     }
 
-    // Baixa o novo index.js
-    const { data: novoIndex } = await axios.get(INDEX_URL);
+    // Verifica se existem arquivos para atualizar
+    if (!Array.isArray(remote.files) || remote.files.length === 0) {
+        throw new Error("Nenhum arquivo para atualizar foi encontrado no version.json.");
+    }
 
-    // Substitui o index.js
-    fs.writeFileSync(path.join(__dirname, "index.js"), novoIndex);
+    // Atualiza cada arquivo listado
+    for (const file of remote.files) {
+
+        if (!file.path || !file.url) continue;
+
+        const { data } = await axios.get(file.url, {
+            responseType: "text"
+        });
+
+        const destino = path.join(__dirname, file.path);
+
+        // Cria a pasta caso não exista
+        fs.mkdirSync(path.dirname(destino), { recursive: true });
+
+        // Salva o novo arquivo
+        fs.writeFileSync(destino, data, "utf8");
+
+        console.log(`✔ Arquivo atualizado: ${file.path}`);
+    }
 
     // Atualiza a versão local
     config.version = remote.version;
-    fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+
+    fs.writeFileSync(
+        configPath,
+        JSON.stringify(config, null, 2),
+        "utf8"
+    );
 
     return {
         atualizado: true,
@@ -193,11 +221,11 @@ async function atualizarBot() {
 `✅ Atualização concluída!
 
 📦 Nova versão: ${remote.version}
-📝 ${remote.message}
-👤 ${remote.author}
-📅 ${remote.releaseDate}
+📝 ${remote.message || "Nenhuma descrição."}
+👤 ${remote.author || "Desconhecido"}
+📅 ${remote.releaseDate || "Não informado"}
 
-⏳ Aplicando atualização...`
+⏳ A atualização será aplicada em alguns segundos...`
     };
 }
 function carregarModos() {
