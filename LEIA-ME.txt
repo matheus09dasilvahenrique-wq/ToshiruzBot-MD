@@ -15,5 +15,7 @@ TOSHIRUZ BOT - PACOTE CRIPTOGRAFADO PARA VENDA
 Observações:
 - Este pacote não inclui node_modules.
 - Este pacote não inclui sessões/QR antigos.
-- O index.js, keycheck.js, menus e funções JS foram empacotados em loader criptografado.
+- O index.js, keycheck.js, ia.js e funções JS foram empacotados em loader criptografado.
 - O cliente precisa inserir a key no configs.json.
+
+· Seja feliz com seu novo bot, nos avalie wa.me/558391762245 ✨
